@@ -27,6 +27,7 @@ class Form extends React.Component {
               type="text"
               id="cardName"
               className="elemento-form"
+              name="cardName"
               value={ cardName }
               onChange={ onInputChange }
             />
@@ -39,6 +40,7 @@ class Form extends React.Component {
               type="textarea"
               id="cardDescription"
               className="elemento-form"
+              name="cardDescription"
               value={ cardDescription }
               onChange={ onInputChange }
             />
@@ -51,6 +53,7 @@ class Form extends React.Component {
               type="number"
               id="Taijutsu"
               className="elemento-form"
+              name="cardAttr1"
               value={ cardAttr1 }
               onChange={ onInputChange }
             />
@@ -63,6 +66,7 @@ class Form extends React.Component {
               type="number"
               id="Genjutsu"
               className="elemento-form"
+              name="cardAttr2"
               value={ cardAttr2 }
               onChange={ onInputChange }
             />
@@ -75,6 +79,7 @@ class Form extends React.Component {
               type="number"
               id="Ninjutsu"
               className="elemento-form"
+              name="cardAttr3"
               value={ cardAttr3 }
               onChange={ onInputChange }
             />
@@ -87,6 +92,7 @@ class Form extends React.Component {
               type="test"
               id="Imagem"
               className="elemento-form"
+              name="cardImage"
               value={ cardImage }
               onChange={ onInputChange }
             />
@@ -98,6 +104,7 @@ class Form extends React.Component {
               data-testid="rare-input"
               id="selecionarRaridade"
               className="elemento-form"
+              name="cardRare"
               value={ cardRare }
               onChange={ onInputChange }
             >
@@ -114,6 +121,7 @@ class Form extends React.Component {
               type="checkbox"
               id="checkbox"
               className="elemento-form"
+              name="cardTrunfo"
               checked={ cardTrunfo }
               onChange={ onInputChange }
             />
@@ -123,6 +131,7 @@ class Form extends React.Component {
             type="submit"
             data-testid="save-button"
             className="elemento-form"
+            name="onSaveButtonClick"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >
@@ -150,33 +159,3 @@ Form.propTypes = {
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
 };
-
-// constructor() {
-//   super();
-
-//   this.state = {
-//     cardName: '',
-//     cardDescription: '',
-//     cardAttr1: '',
-//     cardAttr2: '',
-//     cardAttr3: '',
-//     cardImage: '',
-//     cardRare: '',
-//     cardTrunfo: false,
-//     hasTrunfo: false,
-//     isSaveButtonDisabled: false,
-//     onInputChange: (),
-//     onSaveButtonClick (),
-//   };
-
-//   this.handleChange = this.handleChange.bind(this);
-// }
-
-// handleChange({ target }) {
-//   const { name } = target;
-//   const value = target.type === 'checkbox' ? target.checked : target.value;
-
-//   this.setState({
-//     [name]: value,
-//   });
-// }
