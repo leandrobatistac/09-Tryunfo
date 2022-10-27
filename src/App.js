@@ -21,6 +21,7 @@ class App extends React.Component {
     this.handleButton = this.handleButton.bind(this);
     this.salvarCarta = this.salvarCarta.bind(this);
     this.temTrunfo = this.temTrunfo.bind(this);
+    this.cartasCriadas = this.cartasCriadas.bind(this);
   }
 
   handleChange({ target }) {
@@ -100,6 +101,22 @@ class App extends React.Component {
     return cardSalvas.filter((carta) => carta.trunfo === true).length;
   }
 
+  cartasCriadas(atuais) {
+    return atuais.map((carta) => (
+      <Card
+        key={ carta.name }
+        cardName={ carta.name }
+        cardDescription={ carta.description }
+        cardAttr1={ carta.atr1 }
+        cardAttr2={ carta.atr2 }
+        cardAttr3={ carta.atr3 }
+        cardImage={ carta.image }
+        cardRare={ carta.rare }
+        cardTrunfo={ carta.trunfo }
+      />
+    ));
+  }
+
   render() {
     const estadoAtual = this.state;
     let error;
@@ -139,6 +156,10 @@ class App extends React.Component {
               cardTrunfo={ estadoAtual.cardTrunfo }
               onInputChange={ this.handleChange }
             />
+          </div>
+
+          <div className="container-cartas-adicionadas">
+            { this.cartasCriadas(estadoAtual.cardSalvas) }
           </div>
         </div>
 
