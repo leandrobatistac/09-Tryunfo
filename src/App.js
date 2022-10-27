@@ -22,6 +22,7 @@ class App extends React.Component {
     this.salvarCarta = this.salvarCarta.bind(this);
     this.temTrunfo = this.temTrunfo.bind(this);
     this.cartasCriadas = this.cartasCriadas.bind(this);
+    this.removerCarta = this.removerCarta.bind(this);
   }
 
   handleChange({ target }) {
@@ -101,19 +102,36 @@ class App extends React.Component {
     return cardSalvas.filter((carta) => carta.trunfo === true).length;
   }
 
+  removerCarta(cardName) {
+    const { cardSalvas } = this.state;
+    const listraFiltrada = cardSalvas.filter((element) => element.name !== cardName);
+    this.setState({
+      cardSalvas: listraFiltrada,
+    });
+  }
+
   cartasCriadas(atuais) {
     return atuais.map((carta) => (
-      <Card
-        key={ carta.name }
-        cardName={ carta.name }
-        cardDescription={ carta.description }
-        cardAttr1={ carta.atr1 }
-        cardAttr2={ carta.atr2 }
-        cardAttr3={ carta.atr3 }
-        cardImage={ carta.image }
-        cardRare={ carta.rare }
-        cardTrunfo={ carta.trunfo }
-      />
+      <div className="carta-adicionada" key={ carta.name }>
+        <Card
+          key={ carta.name }
+          cardName={ carta.name }
+          cardDescription={ carta.description }
+          cardAttr1={ carta.atr1 }
+          cardAttr2={ carta.atr2 }
+          cardAttr3={ carta.atr3 }
+          cardImage={ carta.image }
+          cardRare={ carta.rare }
+          cardTrunfo={ carta.trunfo }
+        />
+        <button
+          type="submit"
+          onClick={ () => this.removerCarta(carta.name) }
+          data-testid="delete-button"
+        >
+          Excluir
+        </button>
+      </div>
     ));
   }
 
@@ -121,7 +139,7 @@ class App extends React.Component {
     const estadoAtual = this.state;
     let error;
     if (this.temTrunfo() > 0 && estadoAtual.cardTrunfo === true) {
-      error = 'Você já tem um Super Trunfo em seu baralho';
+      error = true;
     }
 
     return (

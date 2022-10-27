@@ -114,7 +114,7 @@ class Form extends React.Component {
             </select>
           </label>
 
-          { hasTrunfo ? (<span>{ hasTrunfo }</span>)
+          { hasTrunfo ? (<span>Você já tem um Super Trunfo em seu baralho</span>)
             : (
               <label htmlFor="checkbox">
                 SuperTrunfo
@@ -157,12 +157,13 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool,
   isSaveButtonDisabled: PropTypes.bool,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
 };
 
 Form.defaultProps = {
+  hasTrunfo: false,
   isSaveButtonDisabled: false,
 };
