@@ -15,9 +15,11 @@ class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
+      cardSalvas: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleButton = this.handleButton.bind(this);
+    this.salvarCarta = this.salvarCarta.bind(this);
   }
 
   handleChange({ target }) {
@@ -58,6 +60,40 @@ class App extends React.Component {
     }
   }
 
+  salvarCarta(event) {
+    event.preventDefault();
+    const { cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      cardSalvas,
+    } = this.state;
+    const cartaAtual = {
+      name: cardName,
+      description: cardDescription,
+      atr1: cardAttr1,
+      atr2: cardAttr2,
+      atr3: cardAttr3,
+      image: cardImage,
+      rare: cardRare,
+      trunfo: cardTrunfo,
+    };
+    cardSalvas.push(cartaAtual);
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardRare: 'normal',
+    });
+  }
+
   render() {
     const estadoAtual = this.state;
     return (
@@ -76,6 +112,7 @@ class App extends React.Component {
               cardTrunfo={ estadoAtual.cardTrunfo }
               onInputChange={ this.handleChange }
               isSaveButtonDisabled={ this.handleButton() }
+              onSaveButtonClick={ this.salvarCarta }
             />
           </div>
           <div className="container-carta">

@@ -128,7 +128,7 @@ class Form extends React.Component {
           </label>
 
           <button
-            type="submit"
+            type="button"
             data-testid="save-button"
             className="elemento-form"
             name="onSaveButtonClick"
