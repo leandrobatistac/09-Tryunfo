@@ -20,6 +20,7 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleButton = this.handleButton.bind(this);
     this.salvarCarta = this.salvarCarta.bind(this);
+    this.temTrunfo = this.temTrunfo.bind(this);
   }
 
   handleChange({ target }) {
@@ -94,8 +95,18 @@ class App extends React.Component {
     });
   }
 
+  temTrunfo() {
+    const { cardSalvas } = this.state;
+    return cardSalvas.filter((carta) => carta.trunfo === true).length;
+  }
+
   render() {
     const estadoAtual = this.state;
+    let error;
+    if (this.temTrunfo() > 0 && estadoAtual.cardTrunfo === true) {
+      error = 'Você já tem um Super Trunfo em seu baralho';
+    }
+
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -109,10 +120,11 @@ class App extends React.Component {
               cardAttr3={ estadoAtual.cardAttr3 }
               cardImage={ estadoAtual.cardImage }
               cardRare={ estadoAtual.cardRare }
-              cardTrunfo={ estadoAtual.cardTrunfo }
               onInputChange={ this.handleChange }
               isSaveButtonDisabled={ this.handleButton() }
               onSaveButtonClick={ this.salvarCarta }
+              hasTrunfo={ error || undefined }
+              cardTrunfo={ estadoAtual.cardTrunfo }
             />
           </div>
           <div className="container-carta">
