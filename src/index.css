@@ -21,6 +21,11 @@ code {
   margin: 5px;
 }
 
+.container-global {
+  display: flex;
+  width: 100%;
+}
+
 button {
   width: 200px;
 }
