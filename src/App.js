@@ -12,8 +12,8 @@ class App extends React.Component {
       cardAttr1: '',
       cardAttr2: '',
       cardAttr3: '',
-      cardImage: '',
-      cardRare: '',
+      cardImage: 'https://i.imgur.com/sZLuwH8.png',
+      cardRare: 'normal',
       cardTrunfo: false,
       cardSalvas: [],
     };
@@ -125,6 +125,7 @@ class App extends React.Component {
           cardTrunfo={ carta.trunfo }
         />
         <button
+          className="button-excluir"
           type="submit"
           onClick={ () => this.removerCarta(carta.name) }
           data-testid="delete-button"
@@ -144,42 +145,54 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1>Tryunfo</h1>
-        <div className="container-global">
-          <div className="container-formulario">
-            <Form
-              cardName={ estadoAtual.cardName }
-              cardDescription={ estadoAtual.cardDescription }
-              cardAttr1={ estadoAtual.cardAttr1 }
-              cardAttr2={ estadoAtual.cardAttr2 }
-              cardAttr3={ estadoAtual.cardAttr3 }
-              cardImage={ estadoAtual.cardImage }
-              cardRare={ estadoAtual.cardRare }
-              onInputChange={ this.handleChange }
-              isSaveButtonDisabled={ this.handleButton() }
-              onSaveButtonClick={ this.salvarCarta }
-              hasTrunfo={ error || undefined }
-              cardTrunfo={ estadoAtual.cardTrunfo }
+        <div className="elipse-18" />
+        <div className="elipse-16" />
+        <main className="container-global">
+          <section className="container-logo">
+            <img
+              src="https://uploaddeimagens.com.br/images/004/080/491/original/logo_tryunfo.png?1666915957"
+              alt="logo-trybe"
+              className="logo-trybe"
             />
-          </div>
-          <div className="container-carta">
-            <Card
-              cardName={ estadoAtual.cardName }
-              cardDescription={ estadoAtual.cardDescription }
-              cardAttr1={ estadoAtual.cardAttr1 }
-              cardAttr2={ estadoAtual.cardAttr2 }
-              cardAttr3={ estadoAtual.cardAttr3 }
-              cardImage={ estadoAtual.cardImage }
-              cardRare={ estadoAtual.cardRare }
-              cardTrunfo={ estadoAtual.cardTrunfo }
-              onInputChange={ this.handleChange }
-            />
-          </div>
+          </section>
+          <div className="box-branco">
+            <section className="container-form">
+              <Form
+                cardName={ estadoAtual.cardName }
+                cardDescription={ estadoAtual.cardDescription }
+                cardAttr1={ estadoAtual.cardAttr1 }
+                cardAttr2={ estadoAtual.cardAttr2 }
+                cardAttr3={ estadoAtual.cardAttr3 }
+                cardImage={ estadoAtual.cardImage }
+                cardRare={ estadoAtual.cardRare }
+                onInputChange={ this.handleChange }
+                isSaveButtonDisabled={ this.handleButton() }
+                onSaveButtonClick={ this.salvarCarta }
+                hasTrunfo={ error || undefined }
+                cardTrunfo={ estadoAtual.cardTrunfo }
+              />
+            </section>
 
-          <div className="container-cartas-adicionadas">
-            { this.cartasCriadas(estadoAtual.cardSalvas) }
+            <section className="container-card">
+              <h2 className="titulo-preview">Pré-Visualização</h2>
+              <Card
+                cardName={ estadoAtual.cardName }
+                cardDescription={ estadoAtual.cardDescription }
+                cardAttr1={ estadoAtual.cardAttr1 }
+                cardAttr2={ estadoAtual.cardAttr2 }
+                cardAttr3={ estadoAtual.cardAttr3 }
+                cardImage={ estadoAtual.cardImage }
+                cardRare={ estadoAtual.cardRare }
+                cardTrunfo={ estadoAtual.cardTrunfo }
+                onInputChange={ this.handleChange }
+              />
+            </section>
           </div>
-        </div>
+          <h2 className="titulo-todas-cartas">Todas as Cartas</h2>
+          <section className="container-baralho">
+            { this.cartasCriadas(estadoAtual.cardSalvas) }
+          </section>
+        </main>
 
       </div>
     );

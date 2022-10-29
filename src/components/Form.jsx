@@ -17,112 +17,116 @@ class Form extends React.Component {
       onInputChange,
       onSaveButtonClick } = this.props;
     return (
-      <div className="container-cadastro">
-        <h2>Adicione sua carta</h2>
-        <form className="form">
-          <label htmlFor="cardName">
-            Nome da Carta
-            <input
-              data-testid="name-input"
-              type="text"
-              id="cardName"
-              className="elemento-form"
-              name="cardName"
-              value={ cardName }
-              onChange={ onInputChange }
-            />
-          </label>
+      <form className="form">
+        <h2 className="titulo-adicione">Adicione sua carta</h2>
+        <label className="sub-titulo form-name-titulo" htmlFor="cardName">
+          Nome
+          <br />
+          <input
+            data-testid="name-input"
+            type="text"
+            id="cardName"
+            className="form-name-input"
+            name="cardName"
+            value={ cardName }
+            onChange={ onInputChange }
+          />
+        </label>
 
-          <label htmlFor="cardDescription">
-            Descrição
-            <input
-              data-testid="description-input"
-              type="textarea"
-              id="cardDescription"
-              className="elemento-form"
-              name="cardDescription"
-              value={ cardDescription }
-              onChange={ onInputChange }
-            />
-          </label>
+        <label className="sub-titulo" htmlFor="cardDescription">
+          Descrição
+          <br />
+          <textarea
+            data-testid="description-input"
+            id="cardDescription"
+            maxLength={ 170 }
+            placeholder="Insira sua descrição aqui aqui..."
+            className="form-description-input"
+            name="cardDescription"
+            value={ cardDescription }
+            onChange={ onInputChange }
+          />
+        </label>
 
-          <label htmlFor="Taijutsu">
-            Taijutsu
-            <input
-              data-testid="attr1-input"
-              type="number"
-              id="Taijutsu"
-              className="elemento-form"
-              name="cardAttr1"
-              value={ cardAttr1 }
-              onChange={ onInputChange }
-            />
-          </label>
+        <label className="sub-titulo form-atr-label" htmlFor="Taijutsu">
+          Taijutsu
+          <input
+            data-testid="attr1-input"
+            type="number"
+            id="Taijutsu"
+            className="form-atr-input"
+            name="cardAttr1"
+            value={ cardAttr1 }
+            onChange={ onInputChange }
+          />
+        </label>
 
-          <label htmlFor="Genjutsu">
-            Genjutsu
-            <input
-              data-testid="attr2-input"
-              type="number"
-              id="Genjutsu"
-              className="elemento-form"
-              name="cardAttr2"
-              value={ cardAttr2 }
-              onChange={ onInputChange }
-            />
-          </label>
+        <label className="sub-titulo form-atr-label" htmlFor="Genjutsu">
+          Ninjutsu
+          <input
+            data-testid="attr2-input"
+            type="number"
+            id="Genjutsu"
+            className="form-atr-input"
+            name="cardAttr2"
+            value={ cardAttr2 }
+            onChange={ onInputChange }
+          />
+        </label>
 
-          <label htmlFor="Ninjutsu">
-            Ninjutsu
-            <input
-              data-testid="attr3-input"
-              type="number"
-              id="Ninjutsu"
-              className="elemento-form"
-              name="cardAttr3"
-              value={ cardAttr3 }
-              onChange={ onInputChange }
-            />
-          </label>
+        <label className="sub-titulo form-atr-label" htmlFor="Ninjutsu">
+          Genjutsu
+          <input
+            data-testid="attr3-input"
+            type="number"
+            id="Ninjutsu"
+            className="form-atr-input"
+            name="cardAttr3"
+            value={ cardAttr3 }
+            onChange={ onInputChange }
+          />
+        </label>
 
-          <label htmlFor="Imagem">
-            Imagem
-            <input
-              data-testid="image-input"
-              type="test"
-              id="Imagem"
-              className="elemento-form"
-              name="cardImage"
-              value={ cardImage }
-              onChange={ onInputChange }
-            />
-          </label>
+        <label className="sub-titulo form-atr-label" htmlFor="Imagem">
+          Imagem
+          <input
+            data-testid="image-input"
+            type="test"
+            id="Imagem"
+            className="form-atr-input"
+            name="cardImage"
+            value={ cardImage }
+            onChange={ onInputChange }
+          />
+        </label>
 
-          <label htmlFor="selecionarRadidade">
-            Raridade
-            <select
-              data-testid="rare-input"
-              id="selecionarRaridade"
-              className="elemento-form"
-              name="cardRare"
-              value={ cardRare }
-              onChange={ onInputChange }
-            >
-              <option>normal</option>
-              <option>raro</option>
-              <option>muito raro</option>
-            </select>
-          </label>
+        <label className="sub-titulo" htmlFor="selecionarRadidade">
+          Raridade
+          <br />
+          <select
+            data-testid="rare-input"
+            id="selecionarRaridade"
+            className="form-rare-input"
+            name="cardRare"
+            value={ cardRare }
+            onChange={ onInputChange }
+          >
+            <option>normal</option>
+            <option>raro</option>
+            <option>muito raro</option>
+          </select>
+        </label>
 
+        <div className="container-botao">
           { hasTrunfo ? (<span>Você já tem um Super Trunfo em seu baralho</span>)
             : (
-              <label htmlFor="checkbox">
+              <label className="sub-titulo SuperTrunfo" htmlFor="checkbox">
                 SuperTrunfo
                 <input
                   data-testid="trunfo-input"
                   type="checkbox"
                   id="checkbox"
-                  className="elemento-form"
+                  className="form-checkbox-input"
                   name="cardTrunfo"
                   checked={ cardTrunfo }
                   onChange={ onInputChange }
@@ -133,15 +137,15 @@ class Form extends React.Component {
           <button
             type="button"
             data-testid="save-button"
-            className="elemento-form"
+            className="form-button-input"
             name="onSaveButtonClick"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >
             Salvar
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }

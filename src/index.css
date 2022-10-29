@@ -1,36 +1,345 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #052727;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Epilogue";
+  src: url(epilogue.regular.ttf);
+  }
+
+@font-face {
+  font-family: "Epilogue Bold";
+  src: url(Epilogue-Bold.ttf);
+  }
+
+.elipse-18 {
+  position: absolute;
+  width: 1134px;
+  height: 1134px;
+  left: 657px;
+  top: 433px;
+
+  background: radial-gradient(50% 50% at 50% 50%, #2FC18C 0%, rgba(217, 217, 217, 0) 100%);
+  mix-blend-mode: overlay;
+}
+
+.elipse-16 {
+  position: absolute;
+  width: 1134px;
+  height: 1134px;
+  left: -603px;
+  top: -449px;
+
+  background: radial-gradient(50% 50% at 50% 50%, #2FC18C 0%, rgba(217, 217, 217, 0) 100%);
+  mix-blend-mode: overlay;
+}
+
+.titulo-adicione {
+  width: 355px;
+  height: 36px;
+  font-family: 'Epilogue Bold';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 29px;
+  text-transform: uppercase;
+
+  color: #2FC18C;
+}
+
+.titulo-preview {
+  width: 355px;
+  height: 36px;
+  font-family: 'Epilogue Bold';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2FC18C;
+}
+
+.container-global {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-branco {
+  width: 1124px;
+  height: 721px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  display: flex;
+}
+
+.container-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-card {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-trybe {
+  width: 504.31px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.elemento-form {
-  margin: 5px;
-}
+/* Modelo da Carta */
 
-.container-global {
+.bloco-branco {
+  width: 358.17px;
+  height: 554.33px;
+  background: #FFFFFF;
+  box-shadow: 0px 3.89311px 18.4923px rgba(0, 0, 0, 0.25);
+  border-radius: 9.73277px;
   display: flex;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloco-verde {
+  width: 338.7px;
+  height: 533.86px;
+  background: #036B52;
+  border-radius: 9.73277px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.atributos {
+  width: 308.53px;
+  height: 192.22px;
+  background: #FFFFFF;
+  border-end-end-radius: 9.73277px;
+  border-end-start-radius: 9.73277px;
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.description {
+  width: 308.53px;
+  height: 59px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 9.73277px;
+  line-height: 13px;
+  color: #FFFFFF;
+  transform: rotate(-6.92deg);
+  text-align: justify;
+  margin: 0;
+  position: relative;
+  top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-container {
+  width: 308.53px;
+  height: 38.93px;
+  background: #023031;
+  border-radius: 9.73277px 9.73277px 0px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-name {
+  font-family: 'Epilogue Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 27.2518px;
+  line-height: 28px;
+  color: #FFFFFF;
+  padding: 15px;
+  margin-top: 33px;
+}
+
+.image-container {
+  width: 308.53px;
+  height: 200.57px;
+}
+
+.card-image {
+  width: 308.53px;
+  height: 270.57px;
+  clip-path: polygon(0 0, 100% 0, 100% 79%, 0 93%);
+}
+
+.atributo {
+  position: relative;
+  top: 30px;
+  width: 276.41px;
+  height: 29.92px;
+  background: #F0F2F5;
+  border-radius: 9.73277px;
+  margin: 5px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15.5724px;
+  line-height: 150%;
+  color: #3D495C;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-rare {
+  position: relative;
+  top: 25px;
+  width: 276.41px;
+  height: 29.92px;
+  margin: 5px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15.5724px;
+  line-height: 150%;
+  color: #3D495C;
+  display: flex;
+  font-size: 70%;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+}
+
+/* Modelo do Form */
+
+.sub-titulo {
+  font-family: 'Epilogue Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #3D495C;
+  padding: 5px;
+}
+
+.form-name-input {
+  width: 365px; 
+  Height: 37px;
+  border: 1px solid #3D495C;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  font-family: 'Epilogue';
+}
+
+.form-description-input {
+  width: 365px; 
+  Height: 80px;
+  border-bottom: 1px solid #3D495C;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  font-family: 'Epilogue';
+}
+
+.form-atr-input {
+  box-sizing: border-box;
+  width: 275px;
+  height: 37px;
+  background: #FFFFFF;
+  border: 1px solid #29313D;
+  border-radius: 2px;
+}
+
+.form-atr-label {
+  width: 365px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-rare-input {
+  width: 365px; 
+  Height: 37px;
+  border: 1px solid #3D495C;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  font-family: 'Epilogue';
+}
+
+.form-button-input {
+  padding: 8px 32px;
+  gap: 10px;
+  width: 115px;
+  height: 40px;
+  background: #2FC18C;
+  border-radius: 2px;
+  color: #FFFFFF;
+  border: 0px;
+}
+
+.container-botao {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 365px; 
+  margin-top: 20px;
+}
+
+.button-excluir {
+  padding: 8px 32px;
+  gap: 10px;
+  width: 115px;
+  height: 40px;
+  background: #2FC18C;
+  border-radius: 4px;
+  color: #FFFFFF;;
+  margin: 10px;
+  border: 0px;
 }
 
 .carta-adicionada {
-  border: 1px solid black;
-  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
 }
 
-button {
-  width: 200px;
+.container-baralho {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.titulo-todas-cartas {
+  width: 355px;
+  height: 36px;
+  font-family: 'Epilogue Bold';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2FC18C;
+  margin-top: 40px;
 }
